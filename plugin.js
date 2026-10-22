@@ -190,6 +190,27 @@ export function parseTaskResult(ctx, body, response) {
   return { status: "UNKNOWN", reason: "unrecognized status: " + trimmed(data.status) };
 }
 
+function artifactImageURL(ctx) {
+  const data = (ctx && ctx.data) || {};
+  return imageURL(data);
+}
+
+export function listArtifacts(task) {
+  if (task && task.status !== "SUCCESS") return [];
+  return artifactImageURL(task) ? [{ key: "image", type: "image", mimeType: "image/png" }] : [];
+}
+
+export function buildContentRequest(ctx) {
+  if (ctx.artifactKey !== "image") throw new Error("artifact_not_found");
+  const url = artifactImageURL(ctx);
+  if (!url) throw new Error("artifact_not_found");
+  return {
+    url: url,
+    method: ctx.clientRequest && ctx.clientRequest.method ? ctx.clientRequest.method : "GET",
+    credentialless: true,
+  };
+}
+
 export function extractUsage(ctx) {
   if (ctx.usagePurpose === "billing_ratios") return null;
   return { image_count: 1 };

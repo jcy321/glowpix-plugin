@@ -1,0 +1,38 @@
+{
+  "code": "success",
+  "data": {
+    "action": "generate",
+    "channel_id": 1,
+    "created_at": 1792612880,
+    "data": {
+      "images": [
+        "https://mras.glowpix.ai/router_public/production/artifacts/carrothub/tasks/d300f9ee-52b1-4630-bef6-008ab4047ce1/outputs/result_00.png"
+      ],
+      "task_info": {
+        "created_at": "2026-10-21T20:01:20.732176+00:00",
+        "id": "d300f9ee-52b1-4630-bef6-008ab4047ce1",
+        "status": "completed",
+        "updated_at": "2026-10-21T20:01:42.149701+00:00"
+      }
+    },
+    "fail_reason": "",
+    "finish_time": 1792612910,
+    "group": "default",
+    "id": 1655,
+    "platform": "Resource Endpoint",
+    "progress": "100%",
+    "properties": {
+      "input": "",
+      "origin_model_name": "z-image-spicy"
+    },
+    "quota": 7150,
+    "result_url": "https://mras.glowpix.ai/router_public/production/artifacts/carrothub/tasks/d300f9ee-52b1-4630-bef6-008ab4047ce1/outputs/result_00.png",
+    "start_time": 1792612894,
+    "status": "SUCCESS",
+    "submit_time": 1792612880,
+    "task_id": "task_zk54wInzACZvhjQwFqiBxHXPdMNtemgr",
+    "updated_at": 1792612910,
+    "user_id": 21
+  },
+  "message": ""
+}
